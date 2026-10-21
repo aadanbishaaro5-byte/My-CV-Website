@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV-ga Bishaaro Aadan Cali</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172a36;
+      --muted: #61727a;
+      --paper: #f3f6f4;
+      --card: #ffffff;
+      --accent: #167d70;
+      --accent-dark: #105e55;
+      --line: #e1e9e5;
+      --soft: #eaf4f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #d48a39;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .page {
+      width: min(1080px, calc(100% - 40px));
+      margin: 48px auto;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgb(23 42 54 / 9%);
+    }
+
+    .hero {
+      position: relative;
+      padding: 56px 64px 48px;
+      overflow: hidden;
+      background: linear-gradient(125deg, #123f43, #167d70);
+      color: #fff;
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -130px;
+      right: -60px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgb(255 255 255 / 16%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 40px rgb(255 255 255 / 5%), 0 0 0 80px rgb(255 255 255 / 4%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #b8e6d6;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 4px;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: -0.055em;
+      line-height: 1.12;
+    }
+
+    .role {
+      margin-bottom: 28px;
+      color: #d8eeea;
+      font-size: 1.1rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-style: normal;
+    }
+
+    .contact-list p {
+      margin: 0;
+    }
+
+    nav {
+      padding: 12px 40px;
+      background: #f8faf9;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.45fr);
+      gap: 28px;
+      padding: 36px 40px 44px;
+      align-items: start;
+    }
+
+    .column {
+      display: grid;
+      gap: 20px;
+    }
+
+    section {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      scroll-margin-top: 20px;
+    }
+
+    section.intro {
+      background: var(--soft);
+      border-color: transparent;
+    }
+
+    h2 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 1.12rem;
+      letter-spacing: -0.02em;
+    }
+
+    h2::before {
+      width: 4px;
+      height: 20px;
+      flex: 0 0 auto;
+      border-radius: 4px;
+      background: var(--accent);
+      content: "";
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .detail-list {
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-list li {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .education-card {
+      position: relative;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid #d8e8e2;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #f5faf7, #edf5f1);
+    }
+
+    .education-card::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .education-label {
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .education-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.16rem;
+    }
+
+    .semester-badge {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid #cfe2da;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .skill-groups {
+      display: grid;
+      gap: 12px;
+    }
+
+    .skill-group {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #f8faf9;
+    }
+
+    .skill-group h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 0.91rem;
+    }
+
+    .skill-group h3::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-tags li {
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid #d8e8e2;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-size: 0.83rem;
+      font-weight: 650;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-list li {
+      margin: 0;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f5f8f7;
+    }
+
+    .project-list p {
+      margin-bottom: 0;
+    }
+
+    .contact-section {
+      margin: 0 40px 36px;
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      margin: 0;
+      font-style: normal;
+    }
+
+    .contact-card {
+      display: flex;
+      min-width: 0;
+      min-height: 76px;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #f8faf9;
+      color: var(--ink);
+      text-decoration: none;
+      transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    a.contact-card:hover {
+      transform: translateY(-2px);
+      border-color: #b8d8cc;
+      background: var(--soft);
+    }
+
+    .contact-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .whatsapp-icon {
+      background: #e8f7ed;
+      color: #168c4a;
+    }
+
+    .contact-icon svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .whatsapp-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.9;
+    }
+
+    .contact-value {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .language-list {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .language-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #f8faf9;
+    }
+
+    .language-name {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .language-level {
+      padding: 4px 10px;
+      border: 1px solid #d8e8e2;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 18px 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.86rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 24px, 560px);
+        margin: 12px auto;
+        border-radius: 18px;
+      }
+
+      .hero {
+        padding: 38px 26px 32px;
+      }
+
+      .hero::after {
+        right: -230px;
+      }
+
+      nav {
+        padding: 12px 18px;
+      }
+
+      nav ul {
+        gap: 8px;
+      }
+
+      nav a {
+        padding: 7px 12px;
+        font-size: 0.84rem;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 22px 16px 28px;
+      }
+
+      .column {
+        gap: 16px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .contact-section {
+        margin: 0 16px 28px;
+      }
+
+      .contact-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      nav a {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">CV-ga shakhsiga ah</p>
+        <h1>Bishaaro Aadan Cali</h1>
+        <p class="role">Ardayad baranaysa dhismaha website-yada</p>
+      </div>
+    </header>
+
+    <nav aria-label="CV sections">
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="column">
+        <section class="intro" aria-labelledby="summary-title">
+          <h2 id="summary-title">Professional Summary</h2>
+          <p>
+            Waxaan ahay qof xiiseeya barashada iyo dhismaha website-yada.
+            Hadda waxaan ku jiraa challenge-ka 40 Websites, anigoo tallaabo-tallaabo
+            u baranaya aasaaska web development-ka. Yoolkaygu waa inaan kobciyo
+            xirfadahayga oo aan mustaqbalka dhiso websites waxtar leh.
+          </p>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <article class="education-card">
+            <p class="education-label">University Education</p>
+            <h3>Sahal University</h3>
+            <span class="semester-badge">Currently in Semester 7</span>
+          </article>
+        </section>
+
+        <section id="skills">
+          <h2>Technical Skills</h2>
+          <div class="skill-groups">
+            <article class="skill-group">
+              <h3>Front End</h3>
+              <ul class="skill-tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>PHP</li>
+              </ul>
+            </article>
+            <article class="skill-group">
+              <h3>Back End</h3>
+              <ul class="skill-tags">
+                <li>Supabase</li>
+                <li>SQL</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Courses &amp; Certifications</h2>
+          <ul>
+            <li>Challenge-ka 40 Websites — barasho iyo ku-dhaqan web development</li>
+            <li>Koorsooyin ama shahaadooyin kale: Ku dar haddii aad qaadatay</li>
+          </ul>
+        </section>
+
+        <section id="languages">
+          <h2>Languages</h2>
+          <ul class="language-list">
+            <li>
+              <span class="language-name">Somali</span>
+              <span class="language-level">Advanced · 100%</span>
+            </li>
+            <li>
+              <span class="language-name">English</span>
+              <span class="language-level">Intermediate</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="column">
+        <section id="experience">
+          <h2>Work Experience</h2>
+          <p>No formal work experience yet.</p>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <ul class="project-list">
+            <li>
+              <h3>Website 01/40 — Personal Profile Website</h3>
+              <p>
+                Mashruucii ugu horreeyay ee challenge-ka 40 Websites. Wuxuu ahaa
+                bog profile shakhsiyeed oo lagu soo bandhigayo xog kooban.
+              </p>
+              <p>Link: Ku dar URL-ka mashruucaaga marka uu online yahay.</p>
+            </li>
+            <li>
+              <h3>Website 02/40 — My CV Website</h3>
+              <p>
+                CV online ah oo HTML iyo CSS lagu dhisay, kana kooban waxbarashada,
+                xirfadaha, khibradda iyo mashaariicda.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>References</h2>
+          <p>Tixraacyo waxaa la heli karaa marka la codsado.</p>
+          <p>
+            Haddii aad haysato dad tixraac kuu noqon kara, ku dar magacyadooda
+            iyo habka lagula xiriiri karo adigoo marka hore oggolaansho ka hela.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <address class="contact-list">
+        <a class="contact-card" href="mailto:aadanbishaaro5@gmail.com" aria-label="Email Bishaaro at aadanbishaaro5@gmail.com">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+          </span>
+          <span class="contact-value">aadanbishaaro5@gmail.com</span>
+        </a>
+        <a class="contact-card" href="https://api.whatsapp.com/send/?phone=0907767081&amp;text&amp;type=phone_number&amp;app_absent=0" aria-label="Chat with Bishaaro on WhatsApp">
+          <span class="contact-icon whatsapp-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.6Z"></path>
+              <path d="M9 8.2c.3-.5.5-.5.8-.5h.4c.2 0 .3.1.4.3l.7 1.6c.1.2 0 .4-.1.5l-.5.6c-.1.2-.2.3-.1.5.5.9 1.2 1.6 2 2 .2.1.4.1.5-.1l.6-.7c.1-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.4 0 .3-.2 1-.6 1.4-.4.4-1 .6-1.6.5-1-.1-2.2-.7-3.5-1.8-1.1-.9-1.9-2.2-2.2-3.1-.2-.8 0-1.5.7-2.2Z"></path>
+            </svg>
+          </span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+          </span>
+          <span class="contact-value">Galkacyo</span>
+        </div>
+      </address>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Bishaaro Aadan Cali. Xuquuqda website-kan way dhowran tahay.</p>
+    </footer>
+  </div>
+</body>
+</html>
